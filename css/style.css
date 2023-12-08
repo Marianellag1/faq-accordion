@@ -7,6 +7,15 @@
     color: hsl(228, 45%, 44%);
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
 :root {
     --white: hsl(0, 0%, 100%);
     --light-pink: hsl(275, 100%, 97%);
@@ -17,9 +26,47 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-size: 16px;
     font-family: 'Work Sans', sans-serif;
+    background-image: url(../assets/images/background-pattern-desktop.svg);
+    background-repeat: repeat-x;
+    background-color: var(--light-pink);
 }
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.faq-box {
+    border-radius: 10px;
+    background-color: var(--white);
+    width: 400px;
+    padding: 2rem;
+}
+
+.faq-header {
+    display: flex;
+}
+
+.star img {
+    width: 25px;
+    height: 25px;
+}
+
+h1,
+h2 {
+    color: var(--dark-purple);
+}
+
+h2 {
+    font-size: 16px;
+}
+
+/* p {
+    
+} */
