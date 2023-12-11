@@ -40,22 +40,39 @@ body {
 .wrapper {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .faq-box {
     border-radius: 10px;
     background-color: var(--white);
-    width: 400px;
+    max-width: 670px;
     padding: 2rem;
+    box-shadow: 2px 1px 20px 0px;;
+    /* Centering Div, another way */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
 }
 
 .faq-header {
     display: flex;
+    align-items: center;
+    margin: 2rem 0;
 }
 
 .star img {
-    width: 25px;
-    height: 25px;
+    margin: 0 1rem;
+}
+
+.line {
+    border-top: 1px solid var(--light-pink);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 45px;
 }
 
 h1,
@@ -65,8 +82,45 @@ h2 {
 
 h2 {
     font-size: 16px;
+    font-weight: 600;
+    margin: .625rem 0;
 }
 
-/* p {
-    
-} */
+p {
+    color: var(--grayish-purple);
+    padding: .75rem 0;
+    font-weight: 400;
+}
+
+.question {
+    /* position: relative; */
+    cursor: pointer;
+}
+
+.question:after {
+    content: url(../assets/images/icon-plus.svg);
+}
+
+h2.question::after {
+    float: inline-end;
+    display: flex;
+}
+
+.answer {
+    height: 0; /* height makes the answers overflow one on top of the other */
+    overflow: hidden; /* overflow will hide the text behind the questions */
+    opacity: 0; /* will just hide the answers */
+    transition: all 0.2s;
+    border-bottom: 1px solid;
+}
+
+.question.open+.answer {
+    opacity: 1;
+    overflow: visible;
+    height: 6rem;
+    padding-bottom: .75rem;
+}
+
+.question.open::after {
+    content: url(../assets/images/icon-minus.svg);
+}
